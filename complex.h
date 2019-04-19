@@ -34,6 +34,8 @@ public:
 
     Complex operator++();
     Complex operator--();
+	Complex operator++(int);
+	Complex operator--(int);
 
     Complex operator=(Complex right);
     friend ostream& operator<<(ostream& out , const Complex &c);

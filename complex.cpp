@@ -46,19 +46,32 @@ void Complex::setRe(double re) {
 }
 
 Complex Complex::operator++() {
-    double re , im;
-    re = this->getRe()+1;
-    im = this->getIm()+1;
-    this->setData(re,im);
+    this->re++;
+    this->im++;
     return *this;
 
 }
 
+Complex Complex::operator++(int)
+{
+	Complex c = Complex(this->re, this->im);
+	this->re++;
+	this->im++;
+	return c;
+}
+
+Complex Complex::operator--(int)
+{
+	Complex c = Complex(this->re, this->im);
+	this->re--;
+	this->im--;
+	return c;
+}
+
 Complex Complex::operator--() {
-    double re , im;
-    re = this->getRe()-1;
-    im = this->getIm()-1;
-    this->setData(re,im);
+
+	this->re--;
+	this->im--;
     return *this;
 }
 bool Complex::operator==(Complex right) {
